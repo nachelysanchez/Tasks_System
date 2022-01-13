@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Tasks_System.UI.Registros;
 
 namespace Tasks_System
 {
@@ -27,7 +28,8 @@ namespace Tasks_System
 
         private void rTareaMenuItem_Click(object sender, RoutedEventArgs e)
         {
-
+            rTareas registro = new rTareas();
+            registro.Show();
         }
 
         private void cTareasMenuItem_Click(object sender, RoutedEventArgs e)
