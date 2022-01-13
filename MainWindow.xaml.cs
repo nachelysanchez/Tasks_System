@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Tasks_System.UI.Consultas;
 using Tasks_System.UI.Registros;
 
 namespace Tasks_System
@@ -34,7 +35,8 @@ namespace Tasks_System
 
         private void cTareasMenuItem_Click(object sender, RoutedEventArgs e)
         {
-
+            cTareas consulta = new cTareas();
+            consulta.Show();
         }
     }
 }
