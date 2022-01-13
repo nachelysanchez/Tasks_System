@@ -12,7 +12,7 @@
             <StackPanel Margin="10" HorizontalAlignment="Left">
                 <Label Content="Tarea Id"/>
                 <StackPanel Orientation="Horizontal" >
-                    <TextBox x:Name="TareaIdTextBox" Width="100" Margin="5"/>
+                    <TextBox x:Name="TareaIdTextBox" Width="100" Margin="5" Text="{Binding TareaId}"/>
                     <Button x:Name="BuscarButton" Background="PeachPuff" Click="BuscarButton_Click">
                         <StackPanel Orientation="Horizontal">
                             <Label Content="Buscar"/>
@@ -23,9 +23,9 @@
 
                 <StackPanel>
                     <Label Content="Nombre de la Tarea"/>
-                    <TextBox x:Name="NombreTareaTextBox" Margin="5" Width="350"/>
+                    <TextBox x:Name="NombreTareaTextBox" Margin="5" Width="350" Text="{Binding NombreTarea}"/>
                     <Label Content="Descripción de la Tarea"/>
-                    <TextBox x:Name="DescripcionTextBox" Height="100" Margin="5,0,0,0"/>
+                    <TextBox x:Name="DescripcionTextBox" Height="100" Margin="5,0,0,0" Text="{Binding Descripcion}"/>
                 </StackPanel>
 
             </StackPanel>

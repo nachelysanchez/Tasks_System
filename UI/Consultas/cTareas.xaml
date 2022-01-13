@@ -37,11 +37,11 @@
 
             <StackPanel HorizontalAlignment="Left">
 
-                <DataGrid x:Name="DatosDataGrid" Height="240" Width="400">
+                <DataGrid x:Name="DatosDataGrid" Height="240" Width="400" AutoGenerateColumns="False">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Tarea Id" Binding="{Binding TareaId}"/>
                         <DataGridTextColumn Header="Nombre de la Tarea" Binding="{Binding NombreTarea}"/>
-                        <DataGridTextColumn Header="Descripción " Binding="{Binding Descripcion}"/>
+                        <DataGridTextColumn Header="Descripcion" Binding="{Binding Descripcion}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>
