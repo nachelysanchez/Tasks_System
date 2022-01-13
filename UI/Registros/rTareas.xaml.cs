@@ -60,23 +60,66 @@ namespace Tasks_System.UI.Registros
         }
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
-            var tareas = TareasBLL.Buscar(Utilidades.ToInt(TareaIdTextBox.Text));
-            
+            var tarea = TareasBLL.Buscar(Utilidades.ToInt(TareaIdTextBox.Text));
+            if (tarea != null)
+            {
+                this.tarea = tarea;
+            }
+            else
+            {
+                this.tarea = new Tareas();
+                MessageBox.Show("No se ha encontrado la Tarea", "Error",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            this.DataContext = this.tarea;
         }
 
         private void NuevoButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Limpiar();
         }
 
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!Validar())
+            {
+                return;
+            }
+            if (TareasBLL.ExisteNombre(NombreTareaTextBox.Text))
+            {
+                MessageBox.Show("Ya existe esta tarea. Ingrese otra", "Informacion",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
 
+            var paso = TareasBLL.Guardar(this.tarea);
+
+            if (paso)
+            {
+                Limpiar();
+                MessageBox.Show("La tarea se guardo correctamente", "Exito",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("La tarea no se guardo", "Error",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (TareasBLL.Eliminar(Utilidades.ToInt(TareaIdTextBox.Text)))
+            {
+                Limpiar();
+                MessageBox.Show("Tarea eliminada", "Exito",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("La tarea no se logro eliminar", "Fallo",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
