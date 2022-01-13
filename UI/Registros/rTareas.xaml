@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tasks_System.UI.Registros"
         mc:Ignorable="d"
+        Background="Gainsboro"
         Title="Registro de Tareas" Height="350" Width="400">
     <Grid>
         <StackPanel>
@@ -12,7 +13,7 @@
                 <Label Content="Tarea Id"/>
                 <StackPanel Orientation="Horizontal" >
                     <TextBox x:Name="TareaIdTextBox" Width="100" Margin="5"/>
-                    <Button x:Name="BuscarButton">
+                    <Button x:Name="BuscarButton" Background="PeachPuff">
                         <StackPanel Orientation="Horizontal">
                             <Label Content="Buscar"/>
                         </StackPanel>
@@ -29,17 +30,17 @@
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,15" HorizontalAlignment="Center">
-                <Button x:Name="NuevoButton" Margin="5,0">
+                <Button x:Name="NuevoButton" Margin="5,0" Background="PeachPuff">
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Nuevo" />
                     </StackPanel>
                 </Button>
-                <Button x:Name="GuardarButton"   Margin="5,0">
+                <Button x:Name="GuardarButton"   Margin="5,0" Background="PeachPuff">
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Guardar" />
                     </StackPanel>
                 </Button>
-                <Button x:Name="EliminarButton"  Margin="5,0" >
+                <Button x:Name="EliminarButton"  Margin="5,0" Background="PeachPuff">
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Eliminar" />
                     </StackPanel>
