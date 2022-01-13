@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tasks_System"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Background="Cornsilk"
+        Title="Ventana Principal" Height="300" Width="400">
     <Grid>
-
+        <StackPanel>
+            <Menu>
+                <MenuItem Header="Registros">
+                    <MenuItem x:Name="rTareaMenuItem" Header="Registro de Tareas" Click="rTareaMenuItem_Click"/>
+                </MenuItem>
+                <MenuItem Header="Consultas">
+                    <MenuItem x:Name="cTareasMenuItem" Header="Consulta de Tareas" Click="cTareasMenuItem_Click"/>
+                </MenuItem>
+            </Menu>
+        </StackPanel>
     </Grid>
 </Window>

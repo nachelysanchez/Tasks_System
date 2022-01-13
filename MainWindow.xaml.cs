@@ -24,5 +24,15 @@ namespace Tasks_System
         {
             InitializeComponent();
         }
+
+        private void rTareaMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cTareasMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
