@@ -1,0 +1,50 @@
+﻿<Window x:Class="Tasks_System.UI.Consultas.cTareas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tasks_System.UI.Consultas"
+        mc:Ignorable="d"
+        Title="Consulta de Tareas" Height="380" Width="450">
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="10,5,10,0">
+            <StackPanel Orientation="Horizontal" Height="58">
+                <StackPanel Margin="5,0">
+                    <Label x:Name="FiltroLabel" Content="Filtro:"/>
+                    <ComboBox x:Name="FiltroComboBox" Width="100" Height="25">
+                        <ComboBoxItem x:Name="ListadoComboBoxItem" Content="Todos"/>
+                        <ComboBoxItem x:Name="TareaIdComboBoxItem" Content="Tarea Id" />
+                        <ComboBoxItem x:Name="NombreTareaComboBoxItem" Content="Nombre de Tarea"/>
+                        <ComboBoxItem x:Name="DescripcionComboBoxItem" Content="Descripción de Tarea"/>
+                    </ComboBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel>
+                        <Label Content="Criterio"/>
+                        <TextBox x:Name="CriterioTextBox" Height="25" Width="120" Margin="0,0,10,0"/>
+                    </StackPanel>
+
+                    <Button x:Name="BuscarButton"  Margin="0,20,0,0" Click="BuscarButton_Click_2">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Buscar"/>
+                            <Image Source="/Resources/icons8-google-web-search-24.png" Width="30"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Left">
+
+                <DataGrid x:Name="DatosDataGrid" Height="240" Width="400">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Tarea Id" Binding="{Binding TareaId}"/>
+                        <DataGridTextColumn Header="Nombre de la Tarea" Binding="{Binding NombreTarea}"/>
+                        <DataGridTextColumn Header="Descripción " Binding="{Binding Descripcion}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
