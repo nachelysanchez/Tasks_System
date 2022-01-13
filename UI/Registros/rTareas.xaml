@@ -16,6 +16,7 @@
                     <Button x:Name="BuscarButton" Background="PeachPuff">
                         <StackPanel Orientation="Horizontal">
                             <Label Content="Buscar"/>
+                            <Image Source="/Resources/icons8-google-web-search-24.png" Width="20"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
@@ -33,16 +34,19 @@
                 <Button x:Name="NuevoButton" Margin="5,0" Background="PeachPuff">
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Nuevo" />
+                        <Image Source="/Resources/icons8-nuevo-48.png" Width="20"/>
                     </StackPanel>
                 </Button>
                 <Button x:Name="GuardarButton"   Margin="5,0" Background="PeachPuff">
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Guardar" />
+                        <Image Source="/Resources/icons8-guardar-48.png" Width="20"/>
                     </StackPanel>
                 </Button>
                 <Button x:Name="EliminarButton"  Margin="5,0" Background="PeachPuff">
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Eliminar" />
+                        <Image Source="/Resources/icons8-eliminar-16.png" Width="20"/>
                     </StackPanel>
                 </Button>
             </StackPanel>
