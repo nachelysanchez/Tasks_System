@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Tasks_System.DAL;
@@ -95,5 +96,127 @@ namespace Tasks_System.BLL
             }
             return paso;
         }
+        /// <summary>
+        /// Permite eliminar una tarea mediante id
+        /// </summary>
+        /// <param name="id">El Id de la entidad que se desea eliminar</param>
+        public static bool Eliminar(int id)
+        {
+            bool paso = false;
+            Contexto contexto = new Contexto();
+            try
+            {
+                var tarea = contexto.Tareas.Find(id);
+                if (tarea != null)
+                {
+                    contexto.Tareas.Remove(tarea);
+                    paso = contexto.SaveChanges() > 0;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+
+            }
+            return paso;
+        }
+        /// <summary>
+        /// Permite buscar una tarea mediante id
+        /// </summary>
+        /// <param name="id">El Id de la entidad que se desea buscar</param>
+        public static Tareas Buscar(int id)
+        {
+            Contexto contexto = new Contexto();
+            Tareas tarea;
+            try
+            {
+                tarea = contexto.Tareas.Find(id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return tarea;
+        }
+        /// <summary>
+        /// Permite buscar una tarea con filtros
+        /// </summary>
+        /// <param name="criterio">El criterio por el cual se buscara</param>
+        public static List<Tareas> GetList(Expression<Func<Tareas, bool>> criterio)
+        {
+            Contexto contexto = new Contexto();
+            List<Tareas> lista = new List<Tareas>();
+
+            try
+            {
+                lista = contexto.Tareas.Where(criterio).ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return lista;
+        }
+        /// <summary>
+        /// Permite obtener el listado de todas las tareas agregadad
+        /// </summary>
+        public static List<Tareas> GetTareas()
+        {
+            Contexto contexto = new Contexto();
+            List<Tareas> lista = new List<Tareas>();
+
+            try
+            {
+                lista = contexto.Tareas.ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return lista;
+        }
+        /// <summary>
+        /// Permite buscar si una tarea ya existe con un nombre
+        /// </summary>
+        /// <param name="nombre">El nombre que se verificara</param>
+        public static bool ExisteNombre(string nombre)
+        {
+            Contexto contexto = new Contexto();
+            bool encontrado = false;
+
+            try
+            {
+                encontrado = contexto.Tareas.Any(e => e.NombreTarea == nombre);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return encontrado;
+        }
+
     }
 }
